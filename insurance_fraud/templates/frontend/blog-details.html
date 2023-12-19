@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zxx">
+    
+
+<head>
+        <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{% load static%}
+
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+		
+		<!-- Title -->
+		<title>Blog</title>
+    </head>
+
+    <body>
+		<!-- Start Preloader Area -->
+		<div class="preloader">
+			<div class="lds-ripple">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<!-- End Preloader Area -->
+
+		{% include 'nav1.html'%}
+
+		<!-- Start Sidebar Modal -->
+		<div class="sidebar-modal">  
+			<div class="modal right fade" id="myModal2">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">
+									<i class="bx bx-x"></i>
+								</span>
+							</button>
+
+							<h2 class="modal-title">
+								<a href="index.html">
+									<img src="assets/img/logo.png" alt="Logo">
+								</a>
+							</h2>
+						</div>
+
+						<div class="modal-body">
+							<div class="sidebar-modal-widget">
+								<h3 class="title">About Us</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, asperiores doloribus eum laboriosam praesentium delectus unde magni aut perspiciatis cumque deserunt dolore voluptate, autem pariatur.</p>
+							</div>
+
+							<div class="sidebar-modal-widget">
+								<h3 class="title">Additional Links</h3>
+
+								<ul>
+									<li>
+										<a href="log-in.html">Log In</a>
+									</li>
+									<li>
+										<a href="sign-in.html">Sign In</a>
+									</li>
+									<li>
+										<a href="faq.html">FAQ</a>
+									</li>
+									<li>
+										<a href="#">Log Out</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="sidebar-modal-widget">
+								<h3 class="title">Contact Info</h3>
+
+								<ul class="contact-info">
+									<li>
+										<i class="bx bx-location-plus"></i>
+										Address
+										<span>123, Western Road, Melbourne Australia</span>
+									</li>
+									<li>
+										<i class="bx bx-envelope"></i>
+										Email
+										
+									</li>
+									<li>
+										<i class="bx bxs-phone-call"></i>
+										Phone
+										<a href="tel:+822456974">+822456974</a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="sidebar-modal-widget">
+								<h3 class="title">Connect With Us</h3>
+
+								<ul class="social-list">
+									<li>
+										<a href="#">
+											<i class='bx bxl-twitter'></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class='bx bxl-facebook'></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class='bx bxl-instagram'></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class='bx bxl-linkedin'></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class='bx bxl-youtube'></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar Modal -->
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area bg-13">
+			<div class="container">
+				<div class="page-title-content">
+					<h2>Blog Details</h2>
+					<ul>
+						<li>
+							<a href="index.html">
+								Home 
+							</a>
+						</li>
+
+						<li>Blog</li>
+
+						<li>Blog Details</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% for message in messages %}
+			<div class="alert {{ message.tags }} text-center" role="alert">
+				{{ message }}
+			</div>
+		{% endfor %}
+		<!-- End Page Title Area -->
+
+		<!-- Start Blog Details Area -->
+        <section class="blog-details-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-12">
+						<div class="blog-details-desc">
+							<div class="article-image">
+								<img src="../media/{{blog_piece.user_image}}" alt="images">
+							</div>
+
+							<div class="article-content">
+								<div class="entry-meta">
+									<ul>
+										<li><span>Posted On:</span> <a href="#">{{blog_piece.date}}</a></li>
+										<li><span>Posted By:</span> <a href="#">{{blog_piece.author_name}}</a></li>
+									</ul>
+								</div>
+
+								<h3>{{blog_piece.blog_title}}</h3>
+
+								
+
+								<p>{{blog_piece.writing}}</p>
+
+								
+								
+								
+
+								
+
+							</div>
+
+							<div class="article-footer">
+								
+
+								<div class="article-share">
+									<ul class="social">
+										<li>
+											<a href="#" target="_blank">
+												<i class='bx bxl-facebook'></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" target="_blank">
+												<i class='bx bxl-twitter'></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" target="_blank">
+												<i class='bx bxl-linkedin'></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" target="_blank">
+												<i class='bx bxl-pinterest-alt'></i>
+											</a>
+										</li>
+										
+									</ul>
+								</div>
+							</div>
+
+							<div class="post-navigation">
+								<div class="navigation-links">
+									<div class="nav-previous">
+										<a href="#"><i class='bx bx-left-arrow-alt'></i> Prev Post</a>
+									</div>
+
+									<div class="nav-next">
+										<a href="#">Next Post <i class='bx bx-right-arrow-alt'></i></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="comments-area">
+								<h3 class="comments-title">
+									{% if not comment_greater_than_1%}
+										{{comment_count}} Comment:
+									{%else %}
+										{{comment_count}} Comments:
+									{% endif %}
+								</h3>
+								{% for blog_comment in blog_comments%}
+								<ol class="comment-list">
+									<li class="comment">
+										<div class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													
+													<b class="fn">{{blog_comment.user_name}}</b>
+													<span class="says">says:</span>
+												</div>
+
+												<div class="comment-metadata">
+													<a href="#">
+														<span>{{blog_comment.comment_date}}</span>
+													</a>
+												</div>
+											</footer>
+
+											<div class="comment-content">
+												<b><p>{{blog_comment.comment}}</p></b>
+											</div>
+											
+
+											<div class="reply">
+												
+																							
+												
+												<a href="{% url 'delete_comment' blog_comment.id blog_piece.id %}" class="comment-reply-link">Delete</a>
+												
+
+											</div><br><br>
+											<span style="font-size: 22px;">Edit your comment</span>
+											<textarea  name="comment_edit" id="comment_edit" cols="45" rows="5" maxlength="65525" required="required"></textarea>
+										</div>
+
+										
+									</li>
+
+									
+								</ol>
+								{% endfor %}
+								<div class="comment-respond">
+									<h3 class="comment-reply-title">Leave a Reply</h3>
+
+									{% if user_auth %}
+										<form method="post" class="comment-form" action="{% url 'blog_comment' %}">
+										{% csrf_token %}
+										<p class="comment-notes">
+											<span id="email-notes">Your email address will not be published.</span>
+											Required fields are marked 
+											<span class="required">*</span>
+										</p>
+										
+										
+										
+										<p class="comment-form-comment">
+											<label>Comment</label>
+											<textarea name="comment" id="comment" cols="45" rows="5" maxlength="65525" required="required"></textarea>
+										</p>
+										<p style="display:none;"  class="comment-form-comment">
+											<label>blog_id</label>
+											<input name ="blog_id" value={{blog_piece.id}}>
+										</p>
+										<p class="form-submit">
+											<input type="submit" name="submit" id="submit" class="submit" value="Post A Comment">
+										</p>
+
+									</form>
+									{% else %}
+										<form  class="comment-form" action="">
+										
+										<p class="comment-notes">
+											<span id="email-notes">Your email address will not be published.</span>
+											Required fields are marked 
+											<span class="required">*</span>
+										</p>
+										
+										
+										
+										<p class="comment-form-comment">
+											<label>Comment</label>
+											<textarea name="comment" id="comment" cols="45" rows="5" maxlength="65525" required="required"></textarea>
+										</p>
+										<p style="display:none;"  class="comment-form-comment">
+											<label>blog_id</label>
+											<input name ="blog_id" value={{blog_piece.id}}>
+										</p>
+										<p class="form-submit">
+											<input onclick="alert('please login/register account to comment')" type="submit" name="submit" id="submit" class="submit" value="Post A Comment">
+										</p>
+
+									</form>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-12">
+						<aside class="widget-area" id="secondary">
+							<div class="widget widget_search">
+								<h3 class="widget-title">Search Now</h3>
+								<div class="post-wrap">
+									<form class="search-form">
+										<label>
+											<span class="screen-reader-text">Search for:</span>
+											<input type="search" class="search-field" placeholder="Search...">
+										</label>
+										<button type="submit"><i class='bx bx-search'></i></button>
+									</form>
+								</div>
+							</div>
+
+							
+
+							  
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Blog Details Area -->
+		
+		<!-- Start Footer Top Area -->
+		{% include 'footer.html'%}
+		<!-- End Footer Bottom Area -->
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- End Go Top Area --> 
+		
+
+           <!-- Jquery Min JS -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap Bundle  MinJS -->
+        <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Meanmenu Min JS -->
+		<script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+        <!-- Wow Min JS -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Owl Carousel Min JS -->
+		<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Owl Magnific Min JS -->
+		<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+        <!-- Nice Select Min JS -->
+		<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+		<!-- Jarallax Min JS --> 
+		<script src="{% static 'assets/js/jarallax.min.js' %}"></script>
+		<!-- Mixitup Min JS -->
+		<script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+		<!-- Appear Min JS --> 
+        <script src="{% static 'assets/js/appear.min.js' %}"></script>
+		<!-- Odometer Min JS --> 
+		<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+		<!-- Form Ajaxchimp Min JS -->
+		<script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator Min JS -->
+		<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+		<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+        <!-- Custom JS -->
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+    </body>
+
+
+</html>

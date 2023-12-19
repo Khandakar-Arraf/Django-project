@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+        {% load static%}
+        <title>Insura</title>
+        <link rel="icon" type="image/png" href="{% static 'assets-backend/img/favicon.png' %}">
+
+       
+   
+    <style>
+      body{
+        background-color:#151521;
+      }
+      .table {
+  font-family: "Fira Sans", sans-serif;
+  border-collapse: collapse;
+  background-color: #210069;
+  color: #00fff5;
+  width: 40%;
+}
+
+
+.table th {
+  text-align: left;
+  border-top: 2px solid #009578;
+  border-bottom: 2px solid #009578;
+      width: 166px;
+}
+
+.table td,
+.search-input {
+  font-size: 1em;
+  padding: 0.6em 1em;
+  width: 166px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-family: "Fira Sans", sans-serif;
+  background-color:white;
+}
+
+
+
+
+thead input{
+    width: 100px;
+}
+
+tr, th{
+    width: 50px;
+}
+
+/* Define styles for the table container */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  max-width: 100%; /* Adjust the maximum width as needed */
+}
+
+/* Optional: Style the table header row */
+.table-container table thead th {
+  /* Your header cell styles here */
+  background-color: #a00505;
+  color: #17013b;
+  font-weight: bold;
+  /* Add more styles as needed */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #022142; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+
+    </style>
+</head>
+<body>
+ 
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th>
+              
+              <input type="text" class="search-input" placeholder="Age">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="zip code">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="Annual income">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="Number of claims in past 5 years">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="Safety_rating_index">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="Gender">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="marital_status">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="living_status">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="college_degree">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="livig_address_change">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="claim payout">
+            </th>
+            <th>
+              
+              <input type="text" class="search-input" placeholder="claim liability">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="witness_present">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="third party policy">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="accident_location">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="policy_channel">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="vehicle_age">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="price">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="weight">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="category">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="color">
+            </th>
+            <th>
+              <input type="text" class="search-input" placeholder="Favorite Movie">
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reamonn Corkill</td>
+            <td>Pharmacist</td>
+            <td>France</td>
+            <td>Fast and the Furious, The Fast and the Furious, TheFast and the Furious, The</td>
+            <td>Reamonn Corkill</td>
+            <td>Pharmacist</td>
+            <td>France</td>
+            <td>Fast and the Furious, The</td>
+            <td>Reamonn Corkill</td>
+            <td>Pharmacist</td>
+            <td>France</td>
+            <td>Fast and the Furious, The</td>
+            <td>Reamonn Corkill</td>
+            <td>Pharmacist</td>
+            <td>France</td>
+            <td>Fast and the Furious, The Fast and the Furious, TheFast and the Furious, The</td>
+            <td>Reamonn Corkill</td>
+            <td>Pharmacist</td>
+            <td>France</td>
+            <td>Fast and the Furious, The</td>
+            <td>blue</td>
+          </tr>
+         
+         
+          
+         
+          
+          
+          
+        </tbody>
+      </table>
+   
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".search-input").forEach((inputField) => {
+    const tableRows = inputField
+      .closest("table")
+      .querySelectorAll("tbody > tr");
+    const headerCell = inputField.closest("th");
+    const otherHeaderCells = headerCell.closest("tr").children;
+    const columnIndex = Array.from(otherHeaderCells).indexOf(headerCell);
+    const searchableCells = Array.from(tableRows).map(
+      (row) => row.querySelectorAll("td")[columnIndex]
+    );
+
+    inputField.addEventListener("input", () => {
+      const searchQuery = inputField.value.toLowerCase();
+
+      for (const tableCell of searchableCells) {
+        const row = tableCell.closest("tr");
+        const value = tableCell.textContent.toLowerCase().replace(",", "");
+
+        row.style.visibility = null;
+
+        if (value.search(searchQuery) === -1) {
+          row.style.visibility = "collapse";
+        }
+      }
+    });
+  });
+});
+
+
+
+
+      </script>
+      
+</body>
+</html>

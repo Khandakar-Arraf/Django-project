@@ -1,0 +1,21 @@
+<!-- product_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <img height="200px" src="{{product.image.url}}" alt="{{ product.price }}">
+                <p>Price: ${{ product.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

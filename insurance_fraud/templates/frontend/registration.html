@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="zxx">
+    
+
+<head>
+        <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{%load static%}
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+		
+		<!-- Title -->
+		<title>Registration</title>
+    </head>
+
+    <body>
+		<!-- Start Preloader Area -->
+		<div class="preloader">
+			<div class="lds-ripple">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<!-- End Preloader Area -->
+
+		<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{%load static%}
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		
+		<!-- Title -->
+		<title></title>
+    </head>
+    <body>
+        <!-- Start Heder Area --> 
+		<header class="header-area fixed-top">
+			<div class="top-header-area">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="header-content-left">
+								<p id="home_header"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Navbar Area -->
+			<div class="nav-area">
+				<div class="navbar-area">
+					<!-- Menu For Mobile Device -->
+					<div class="mobile-nav">
+						<a href="index.html" class="logo">
+							<img  src="{% static 'assets/img/logo.png' %}" alt="Logo">
+						</a>
+					</div>
+
+					<!-- Menu For Desktop Device -->
+					<div class="main-nav">
+						<nav class="navbar navbar-expand-md navbar-light">
+							<div class="container">
+								<h1>
+									Insura
+								</h1>
+								
+								<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+									<ul class="navbar-nav m-auto">
+										<li class="nav-item">
+											<a href="{% url 'home'%}" class="nav-link dropdown-toggle active">
+												Home
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												Pages
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'testimonials'%}" class="nav-link">Testimonials</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'team'%}" class="nav-link">Team</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'conditions' %}" class="nav-link">Terms & Conditions</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'policy' %}" class="nav-link">Privacy Policy</a>
+												</li>
+												
+
+												<li class="nav-item">
+													<a href="404.html" class="nav-link">404 Error Page</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												User
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'login'%}" class="nav-link">Log In</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'sign_in'%}" class="nav-link">Sign In</a>
+												</li>
+												<li class="nav-item">
+													<a href="recover-password.html" class="nav-link">Recover Password</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'contact' %}" class="nav-link">Contact</a>
+										</li>
+										<li class="nav-item">
+											{% if user_credentials %}
+											<a href="{% url 'profile' %}" class="nav-link">My account</a>
+											{% else %}
+											<a href="#" class="nav-link" onclick="javascript:alert('please login to an account')">My account</a>
+											<script>
+												//prompt('Please create account')
+											</script>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'Products' %}" class="nav-link">Our products</a>
+											
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'blog'%}" class="nav-link dropdown-toggle active">
+												Blog
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'blog'%}" class="nav-link active">Blog</a>
+												</li>
+												
+											</ul>
+										</li>
+									</ul>
+									
+									<!-- Start Other Option -->
+									<div class="others-option">
+										<div class="option-item">
+											<i class="search-btn bx bx-search"></i>
+											<i class="close-btn bx bx-x"></i>
+											
+											<div class="search-overlay search-popup">
+												<div class='search-box'>
+													<form class="search-form">
+														<input class="search-input" name="search" placeholder="Search" type="text">
+		
+														<button class="search-button" type="submit"><i class="bx bx-search"></i></button>
+													</form>
+												</div>
+											</div>
+										</div>
+
+										<div class="subscribe">
+											<a href="{% url 'check_fraud' %}" class="default-btn">
+												Check for Insurance fraud
+											</a>
+										</div>
+
+										<div class="sidebar-menu">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#myModal2">
+												<i class="bx bx-grid-alt"></i>
+											</a>
+										</div>
+									</div>
+									<!-- End Other Option -->
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar Area -->
+		</header>
+		<!-- End Heder Area -->
+    
+    </body>
+</html>
+
+		<!-- Start Sidebar Modal -->
+		{% include 'frontend/Sidebar-Modal.html'%}
+		<!-- End Sidebar Modal -->
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area bg-4">
+			<div class="container">
+				<div class="page-title-content">
+					<h2>Sign In</h2>
+					<ul>
+						<li>
+							<a href="{% url 'home'%}">
+								Home 
+							</a>
+						</li>
+
+						<li>Pages</li>
+
+						<li>User</li>
+
+						<li>Sign In</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Title Area -->
+
+		<!-- Start Sign Up Area -->
+		<section class="user-area-all-style sign-up-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="contact-form-action">
+							<div class="form-heading text-center">
+								<h3 class="form-title">Create an account!</h3>
+								<div>
+									{% for message in messages %}
+										<div class="alert {{ message.tags }}" role="alert">
+											{{ message }}
+										</div>
+									{% endfor %}
+								</div>
+								<div>
+
+									{% if error_name %}
+										<div class="text-danger">
+											Please Enter Name
+										</div>
+									{% endif %}
+									{% if error_email %}
+										<div class="text-danger">
+											Please Enter Email
+										</div>
+									{% endif %}
+									{% if error_password %}
+										<div class="text-danger">
+											Please Enter Password
+										</div>
+									{% endif %}
+									{% if error_password_num %}
+										<div class="text-danger">
+											Password must greater than 3 characters.
+										</div>
+									{% endif %}
+									{% if error_email_valid %}
+										<div class="text-danger">
+											Invalid Email
+										</div>
+									{% endif %}
+
+									{% if password_char %}
+										<div class="text-danger">
+											Password must contain an upper case and lower case.
+										</div>
+									{% endif %}
+
+									
+							
+								</div>
+								
+
+							<form method="post" action="insertuser">
+							{% csrf_token %}
+							
+								<div class="row">
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+										<label for="name"></label>
+											<input id= "name" class="form-control" type="text" name="name" placeholder="Enter your name">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="email"></label>
+											<input id="email" class="form-control"  name="email" placeholder="Email Address">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="phone_number"></label>
+											<input id="phone_number" class="form-control" type="text"  name="phone_number" placeholder="Phone Number">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="DOB"></label>
+											<input id="DOB" class="form-control" type="date"  name="DOB" placeholder="Date of birth">
+											<script>
+												function set_max_date(){
+													// Get the current date in the format "YYYY-MM-DD"
+												const currentDate = new Date().toISOString().split('T')[0];
+												
+												// Set the max attribute of the input field to the current date
+												document.getElementById('DOB').setAttribute('max', currentDate);
+												}
+												set_max_date()
+											  </script>
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="address"></label>
+											<input id="address" class="form-control" type="text"  name="address" placeholder="Address">
+										</div>
+									</div>
+									
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="age"></label>
+											<input onclick="returnValueFromDate();" id="age" class="form-control"  name="age" placeholder="Age">
+										</div>
+										<script>
+												
+												function calculateYearsFromDate(givenDate) {
+												// Convert the given date string to a Date object
+												const givenDateTime = new Date(givenDate);
+
+												// Get the current date
+												const currentDate = new Date();
+
+												// Calculate the difference in years
+												const years = currentDate.getFullYear() - givenDateTime.getFullYear();
+
+												// Adjust for cases where the current date has not reached the anniversary of the given date
+												if (currentDate.getMonth() < givenDateTime.getMonth() || 
+													(currentDate.getMonth() === givenDateTime.getMonth() && currentDate.getDate() < givenDateTime.getDate())) {
+													years--;
+												}
+
+												return years;
+												}
+												
+												
+												
+												
+												function returnValueFromDate(){
+														// Example usage:
+												let givenDate = document.getElementById('DOB').value; // Replace this with the given date in the format "YYYY-MM-DD"
+												let numberOfYears = calculateYearsFromDate(givenDate);
+												document.getElementById('age').value = numberOfYears
+												if(!givenDate){
+													document.getElementById('age').value = 'Please select the date'
+												}
+												}
+												
+
+
+
+										</script>
+
+					
+									</div>
+
+									<div class="col-md-12 col-sm-12">
+										
+										<div class="form-group">
+											<label for="gender">Gender:</label>
+											<Select name="gender">
+												<option value="male">male</option>
+												<option value="female">female</option>
+												<option value="Other">Other</option>
+											</Select>
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12">
+										<div class="form-group">
+											<label for="password"></label>
+											<input id="password" class="form-control" type="password" name="password" placeholder="Password">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12 ">
+										<div class="form-group">
+											<label for="c_password"></label>
+											<input id="c_password" class="form-control" type="password" name="c_password" placeholder="Confirm Password">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12 col-xs-12 form-condition">
+										<div class="agree-label">
+											<input type="checkbox" id="chb1">
+											<label for="chb1">
+												I agree with Insura 
+												<a href="privacy-policy.html">Privacy Policy</a>
+											</label>
+										</div>
+										<div class="agree-label">
+											<input type="checkbox" id="chb2">
+											<label for="chb2">
+												I agree with Insura 
+												<a href="terms-conditions.html">Terms & Conditions</a>
+											</label>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="default-btn btn-two" type="submit">
+											Register Account
+										</button>
+									</div>
+									<div class="col-12">
+										<p class="account-desc">
+											Already have an account?
+											<a href="{% url 'login'%}"> Log In</a>
+										</p>
+									</div>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Sign Up Area -->
+
+		{% include 'footer.html'%}
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- End Go Top Area --> 
+		
+
+        <!-- Jquery Min JS -->
+        <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap Bundle  MinJS -->
+        <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Meanmenu Min JS -->
+		<script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+        <!-- Wow Min JS -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Owl Carousel Min JS -->
+		<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Owl Magnific Min JS -->
+		<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+        <!-- Nice Select Min JS -->
+		<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+		<!-- Jarallax Min JS --> 
+		<script src="{% static 'assets/js/jarallax.min.js' %}"></script>
+		<!-- Mixitup Min JS -->
+		<script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+		<!-- Appear Min JS --> 
+        <script src="{% static 'assets/js/appear.min.js' %}"></script>
+		<!-- Odometer Min JS --> 
+		<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+		<!-- Form Ajaxchimp Min JS -->
+		<script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator Min JS -->
+		<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+		<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+        <!-- Custom JS -->
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+    </body>
+
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML evaluation</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <style>
+
+        body{
+            background: #151521;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box_container{
+            background: linear-gradient(277deg,#000000 , #130F3F);
+            width: 1056px;
+            border: 5px #09b7df groove;
+            padding: 16px;
+            position: relative;
+            left: 135px;
+            margin: 64px 3px;
+
+        }
+        .accuracy_header{
+            position: absolute;
+            left: 360px;
+            top: 155px;
+            font-size: 24px;
+            text-align: center;
+            width: 600px;
+        }
+
+        #reset_knn{
+            position: absolute;
+            left: 600px;
+            top: 195px;
+        }
+
+        #reset_logistic{
+            position: absolute;
+            left: 600px;
+            top: 195px;
+        }
+
+        #reset_xgboost{
+            position: absolute;
+            left: 600px;
+            top: 195px;
+        }
+
+        #reset_rdmf{
+            position: absolute;
+            left: 600px;
+            top: 195px;
+        }
+        .submit_btn{
+            position: relative;
+            left: 68px;
+            width: 119px;
+        }
+        .reset_all{
+            background: linear-gradient(277deg,#000000 , #130F3F);
+            position: fixed;
+            top: 0px;
+            width: 120px;
+            color: white;
+        }
+
+        .logout{
+            background: linear-gradient(277deg,#000000 , #130F3F);
+            position: fixed;
+            top: 70px;
+            width: 120px;
+            color: white;
+        }
+
+        .reset_all:hover{
+            color: white;
+        }
+
+    </style>
+    <link>
+   
+        
+</head>
+<body>
+
+   
+    
+
+    <a href="{% url 'reset_accuracy' %}" class=" btn btn-info reset_all">Reset All accuracy</a>
+    <a href="{% url 'sign_in' %}" class=" btn btn-info logout">Logout</a>
+    <!--KNN model-->
+    <div class="box_container">
+        {% if knn_accuracy %}
+            <p class="accuracy_header">Accuracy of KNN:{{knn_accuracy}}</p>
+        {% else %}
+            <p class="accuracy_header">Accuracy of KNN:</p>
+        {% endif%}
+        <a id="reset_knn" href="{% url 'reset_knn'%}" class="btn btn-info">Reset knn's accuracy</a>
+        <h1>Evaluation of Knn alogrithm</h1>
+        <form method="post" class="uploader" action="{% url 'knn_model' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="p-3">
+                <label class="form-label" for="customFile">Upload CSV file of train dataset</label>
+                <input name="knn_train" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of validation dataset</label>
+                <input name="knn_val" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of test dataset</label>
+                <input name="knn_test" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <button  class="btn btn-primary submit_btn">Submit</button>
+        </form>
+    </div>
+
+    <!--Logistic regression-->
+    <div class="box_container">
+        {% if logistic_accuracy %}
+            <p class="accuracy_header">Accuracy of Logistic regression:{{logistic_accuracy}}</p>
+        {% else %}
+            <p class="accuracy_header">Accuracy of Logistic regression</p>
+        {% endif%}
+        <a id="reset_logistic" href="{% url 'reset_logistic' %}" class="btn btn-info">Reset logisitc accuracy</a>
+        <h1>Evaluation of logistic regression alogrithm</h1>
+        <form method="post" enctype="multipart/form-data" action="{% url 'logistic_accuracy' %}">
+            {% csrf_token %}
+            <div class="p-3">
+                <label class="form-label" for="customFile">Upload CSV file of train dataset</label>
+                <input name="logistic_train"  type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of validation dataset</label>
+                <input name="logistic_val" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of test dataset</label>
+                <input name="logistic_test" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <button  class="btn btn-primary submit_btn">Submit</button>
+        </form>
+    </div>
+
+        <!--XGboost-->
+        <div class="box_container">
+            {% if xgb_accuracy %}
+                <p class="accuracy_header">Accuracy of XGboost:{{xgb_accuracy}}</p>
+            {% else %}
+                <p class="accuracy_header">Accuracy of XGboost:</p>
+            {% endif%}
+            <a id="reset_xgboost" href="{% url 'reset_xgboost'%}" class="btn btn-info">Reset Xgboost accuracy</a>
+            <h1>Evaluation of XGboost Algorithm</h1>
+            <form  method="post" enctype="multipart/form-data", action="{% url 'xgb_accuracy' %}">
+                {% csrf_token %}
+                <div class="p-3">
+                    <label name="xgb_train" class="form-label" for="customFile">Upload CSV file of train dataset</label>
+                    <input type="file" class="form-control w-25" id="customFile" />
+                </div>
+                <div class="p-3">
+                    <label class="form-label " for="customFile">Upload CSV file of validation dataset</label>
+                    <input name="xgb_val" type="file" class="form-control w-25" id="customFile" />
+                </div>
+                <div class="p-3">
+                    <label class="form-label " for="customFile">Upload CSV file of test dataset</label>
+                    <input name="xgb_test" type="file" class="form-control w-25" id="customFile" />
+                </div>
+            </form>
+            <button  class="btn btn-primary submit_btn">Submit</button>
+        </div>
+
+    <!--Random forest model-->
+    <div class="box_container">
+        {% if rfclf_accuracy %}
+            <p class="accuracy_header">Accuracy of Random forest:{{rfclf_accuracy}}</p>
+        {% else %}
+        <p class="accuracy_header">Accuracy of Random forest:</p>
+        {% endif%}
+        <a id="reset_rdmf" href="{% url 'reset_rdmf'%}" class="btn btn-info">Reset Random forest</a>
+        <h1>Evaluation of Random forest</h1>
+        <form  method="post" enctype="multipart/form-data", action="{% url 'rdmf_accuracy' %}">
+            {% csrf_token %}
+            <div class="p-3">
+                <label class="form-label" for="customFile">Upload CSV file of train dataset</label>
+                <input name="rdmf_train" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of validation dataset</label>
+                <input name="rdmf_val" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <div class="p-3">
+                <label class="form-label " for="customFile">Upload CSV file of test dataset</label>
+                <input name="rdmf_test" type="file" class="form-control w-25" id="customFile" />
+            </div>
+            <button  class="btn btn-primary submit_btn">Submit</button>
+        </form>    
+    </div>
+</body>
+</html>
