@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 400px 536px;
+    width: 86%;
+    gap: 168px;
+
+}
+
+.columns {
+  float: left;
+  width: 100%;
+  padding: 8px;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  border-radius: 16px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,11,75,1) 77%, rgba(0,212,255,1) 100%);
+    color: wheat;
+    height: 100%;
+    
+}
+
+
+
+.price .header1 {
+  background-color: inherit;
+  color: white;
+  font-size: 31px;
+    font-family: sans-serif;
+}
+
+.price .header2 {
+  background-color: inherit;
+  color: white;
+  font-size: 31px;
+    font-family: sans-serif;
+}
+
+.price .header3 {
+  background-color: inherit;
+  color: white;
+  font-size: 31px;
+    font-family: sans-serif;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  border: none;
+}
+
+.price .grey {
+
+  font-size: 20px;
+}
+
+#premium{
+    position: relative;
+    left: 361px;
+}
+
+.button {
+  background-color: #29035a;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 10px;
+  border-style: outset;
+  width: 100%;
+    display: block;
+    padding: 15px;
+
+}
+
+.button:hover {
+  
+  background-color: #180283; /* Color of the sliding element */
+  transition: 0.3s linear; /* Animation duration and easing */
+  color: whitesmoke;
+}
+
+#btn1{
+    position: relative;
+    top: 46px;
+}
+#btn2{
+    position: relative;
+    bottom: 19px;
+}
+#btn3{
+    position:relative;
+    bottom: 13px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+</style>
+<title>Pricing</title>
+</head>
+<body style="background-color: #260338;">
+    {% include 'nav.html'%}<br><br><br><br><br><br>
+<h2 style="text-align:center; margin-bottom: 100px; color: whitesmoke;">Insurance check pricing</h2>
+
+
+
+<div class="box-container">
+    <div class="columns">
+        <ul class="price">
+          <li class="header1">Basic</li>
+          <li class="grey"> $ 9.99/month </li>
+          <li>5 insurance check credit</li>
+         
+          <li class="grey"><a id="btn1" href="#" class="button">Purchase</a></li>
+        </ul>
+      </div>
+      
+      <div class="columns">
+        <ul class="price">
+          <li class="header2" >Pro</li>
+          <li class="grey">$ 17.99/month </li>
+          <li>10 insurance check credit</li>
+          <li>Save upto 5%</li>
+          <li class="grey"><a id="btn2" href="#" class="button">Purchase</a></li>
+        </ul>
+      </div>
+      
+      <div class="columns" id="premium">
+        <ul class="price">
+          <li class="header3">Premium</li>
+          <li class="grey">$ 36.99/month </li>
+          <li>30 insurance check credit</li>
+          <li>Save upto 10%</li>
+          <li>50 Domains</li>
+          <li>5GB Bandwidth</li>
+          <li class="grey"><a id="btn3" href="#" class="button">Purchase</a></li>
+        </ul>
+      </div>
+
+</div>
+
+
+</body>
+
+</html>

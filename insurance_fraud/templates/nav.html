@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html lang="zxx">
+
+
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{%load static%}
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+		
+		<!-- Title -->
+		<title></title>
+		
+		
+    </head>
+    <body>
+        <!-- Start Heder Area --> 
+		<header class="header-area fixed-top">
+			<div class="top-header-area">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="header-content-left">
+								<h1>Insura</h1>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="tp-header-login d-none d-lg-block">
+								<a href="#" class="d-flex align-items-center justify-content-end">
+								   <div class="tp-header-login-content d-none d-xl-block justify-content-end">
+									 
+								   </div>
+								</a>
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Navbar Area -->
+			<div class="nav-area">
+				<div class="navbar-area">
+					<!-- Menu For Mobile Device -->
+					<div class="mobile-nav">
+						<a href="index.html" class="logo">
+							<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+						</a>
+					</div>
+
+					<!-- Menu For Desktop Device -->
+					<div class="main-nav">
+						<nav class="navbar navbar-expand-md navbar-light">
+							<div class="container">
+								<h1>Insura</h1>
+								<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+									<ul class="navbar-nav m-auto">
+										<li class="nav-item">
+											<a href="{% url 'home' %}" class="nav-link dropdown-toggle active">
+												Home
+											</a>
+										</li>
+
+										
+
+										<li class="nav-item">
+											<a href="{% url 'contact' %}" class="nav-link">Contact</a>
+										</li>
+										<li class="nav-item">
+											{% if user_credentials %}
+											<a href="{% url 'profile' %}" class="nav-link">My account</a>
+											{% else %}
+											<a href="#" class="nav-link" onclick="javascript:alert('please login to an account')">My account</a>
+											<script>
+												//prompt('Please create account')
+											</script>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'Products' %}" class="nav-link">Our products</a>
+											
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'blog'%}" class="nav-link dropdown-toggle active">
+												Blog
+												<i class="bx bx-plus"></i>
+											</a>
+
+											
+										</li>
+									</ul>
+								</div>
+								<div>
+									<form enctype="multipart/form-data" method="post" >
+										{% csrf_token %}
+										
+										</form>
+									
+								</div>
+								<a id="logout" href="{% url 'logout'%}">
+								<div class="others-option">
+									<div class="option-item">
+										<div class="btn btn-warning hover-overlay">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+												<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+											  </svg>
+											  logout
+											</div>								
+									</div>
+								</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar Area -->
+		</header>
+		<!-- End Heder Area -->
+		<div id="login_status">
+			{% if login_status %}
+				  1 
+			{% else %}
+				  0 
+			{% endif %}
+		  
+			</div>
+			<script>
+				function hide_btn(){
+					var login_status = document.getElementById('login_status').innerText
+				if(login_status == 0){
+					document.getElementById('logout').style.display = 'none'
+				}
+				}
+				hide_btn()
+			</script>
+    </body>
+</html>

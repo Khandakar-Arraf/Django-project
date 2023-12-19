@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container home_msg">
+    
+      <form enctype="multipart/form-data" method="post" role="product_page">
+      {% csrf_token %}
+        <button type="submit" class="btn btn-success" href="{% url 'product_page' %}" data-bind-href="pricing">Payment</button>
+      </form>
+   
+      <h2>You're not logged in...</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
+
+   
+  </div>
+
+</body>
+
+{% endblock %} 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart details</title>
+</head>
+<body>
+    {% load cart_tag %}
+    Total Length :: {{request.session.cart|length}}
+
+    Cart Detail:{% for key,value in request.session.cart.items %}
+    {{value.name}} {{value.price}} {{value.quantity}} {{value.image}} Total {{ value.price|multiply:value.quantity }}   
+    {% endfor %}
+</body>
+</html>

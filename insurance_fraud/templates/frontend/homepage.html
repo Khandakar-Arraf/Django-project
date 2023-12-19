@@ -1,0 +1,757 @@
+
+<!doctype html>
+<html lang="zxx">
+
+
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{%load static%}
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+		
+		<!-- Title -->
+		<title>Insura</title>
+		
+		
+    </head>
+
+    <body>
+		
+		<!-- Start Preloader Area -->
+		
+		<!-- End Preloader Area -->
+	
+		<!-- Start Heder Area --> 
+		<header class="header-area fixed-top">
+			<div class="top-header-area">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="header-content-left">
+								<p id="home_header"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Navbar Area -->
+			<div class="nav-area">
+				<div class="navbar-area">
+					<!-- Menu For Mobile Device -->
+					<div class="mobile-nav">
+						<a href="index.html" class="logo">
+							<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+						</a>
+					</div>
+
+					<!-- Menu For Desktop Device -->
+					<div class="main-nav">
+						<nav class="navbar navbar-expand-md navbar-light">
+							<div class="container">
+								<h1>
+									Insura
+								</h1>
+								
+								<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+									<ul class="navbar-nav m-auto">
+										<li class="nav-item">
+											<a href="" class="nav-link dropdown-toggle active">
+												Home
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												Pages
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'testimonials'%}" class="nav-link">Testimonials</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'team'%}" class="nav-link">Team</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'conditions' %}" class="nav-link">Terms & Conditions</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'policy' %}" class="nav-link">Privacy Policy</a>
+												</li>
+												
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												User
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'login'%}" class="nav-link">Log In</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'registration'%}" class="nav-link">Sign In</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'recover_password'%}" class="nav-link">Recover Password</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'contact' %}" class="nav-link">Contacts</a>
+											
+										</li>
+										<li class="nav-item">
+											{% if user_credentials or user_id %}
+											<a href="{% url 'profile' %}" class="nav-link">My account</a>
+											{% else %}
+											<a href="{% url 'login' %}" class="nav-link" onclick="javascript:alert('please login to an account')">My account</a>
+											
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'Products' %}" class="nav-link">Products</a>
+											
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'blog' %}" class="nav-link">Blog</a>	
+										</li>
+									</ul>
+									
+									<!-- Start Other Option -->
+									<div class="others-option">
+										<div class="option-item">
+											<i class="search-btn bx bx-search"></i>
+											<i class="close-btn bx bx-x"></i>
+											
+											<div class="search-overlay search-popup">
+												<div class='search-box'>
+													
+														<input class="search-input" name="search" placeholder="Search" type="text" id="searchInput" >
+		
+														<button class="search-button" id="searchButton" type="submit"><i class="bx bx-search"></i></button>
+														<div id="searchResults"></div>											
+												</div>
+											</div>
+										</div>
+
+										<div class="subscribe">
+											<a href="{% url 'check_fraud' %}" class="default-btn">
+												Check for Insurance fraud
+											</a>
+										</div>
+
+										<div class="sidebar-menu">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#myModal2">
+												<i class="bx bx-grid-alt"></i>
+											</a>
+										</div>
+									</div>
+									<!-- End Other Option -->
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar Area -->
+		</header>
+		<!-- End Heder Area -->
+
+		<!-- Start Sidebar Modal -->
+		{% include 'frontend/Sidebar-Modal.html'%}
+		<!-- End Sidebar Modal -->
+
+		<!-- Start Banner Area -->
+		<div class="main-banner-area">
+			<div class="col-lg-6">
+				<div class="tp-header-login d-none d-lg-block" id = "login">
+					<a href="{%url 'login' %}" class="d-flex align-items-center justify-content-end">
+					   <div class="tp-header-login-icon">
+						  <span>
+							 <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="8.57894" cy="5.77803" r="4.77803" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M1.00002 17.2014C0.998732 16.8655 1.07385 16.5337 1.2197 16.2311C1.67736 15.3158 2.96798 14.8307 4.03892 14.611C4.81128 14.4462 5.59431 14.336 6.38217 14.2815C7.84084 14.1533 9.30793 14.1533 10.7666 14.2815C11.5544 14.3367 12.3374 14.4468 13.1099 14.611C14.1808 14.8307 15.4714 15.27 15.9291 16.2311C16.2224 16.8479 16.2224 17.564 15.9291 18.1808C15.4714 19.1419 14.1808 19.5812 13.1099 19.7918C12.3384 19.9634 11.5551 20.0766 10.7666 20.1304C9.57937 20.2311 8.38659 20.2494 7.19681 20.1854C6.92221 20.1854 6.65677 20.1854 6.38217 20.1304C5.59663 20.0773 4.81632 19.9641 4.04807 19.7918C2.96798 19.5812 1.68652 19.1419 1.2197 18.1808C1.0746 17.8747 0.999552 17.5401 1.00002 17.2014Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							 </svg>                                       
+						  </span>
+					   </div>
+					   <div class="tp-header-login-content d-none d-xl-block" >
+						  
+						  {% if user_credentials %}
+						  <span><b>Hello, {{users.client_name}}</b></span>
+						  {%else%}
+							<span>Hello, Sign In</span>
+							<h5 class="tp-header-login-title">Your Account</h5>
+						  {% endif %}
+					   </div>
+					</a>
+				 </div>
+			</div>
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="banner-text">
+							<span class="wow fadeInUp" data-wow-delay=".2s">Insurance fraud detection</span>
+
+							<h1 class="wow fadeInUp" data-wow-delay=".4s">Are you tired of getting scammed while buying used cars or vehicles with papers?<br><br>Our friendly tool will help you to find out whether the documents are genuine or fraud!</h1>
+								
+							<div class="banner-btn wow fadeInUp" data-wow-delay=".9s">
+								<a href="{% url 'check_fraud' %}" class="default-btn">
+									Get Started
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 pr-0">
+						<div class="banner-img wow fadeInUp" data-wow-delay=".2s">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shape">
+				<img src="{% static 'assets/img/banner/banner-shape.png' %}" alt="Image">
+			</div>
+			<div class="banner-shape-right">
+				<img src="{% static 'assets/img/banner/banner-shape-right.png' %}" alt="Image">
+			</div>
+		</div>
+		<!-- End Banner Area -->
+
+		<!-- Start Choose Us Area -->
+		<section class="choose-us-area pt-100 pb-70">
+			<div class="container">
+				<div class="section-title">
+					<span>Why Choose Us</span>
+					<h2>We are Dedicated to Support You </h2>
+					<p>
+						Welcome to our Fraud Detection Website! We are your trusted partner in safeguarding your business against fraudulent activities. With the increasing sophistication of fraudulent schemes, it has become essential for organizations to stay one step ahead.</p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-choose wow fadeInUp" data-wow-delay=".2s">
+							<span class="flaticon-kindness"></span>
+							<h3>Service With Love</h3>
+							<p>Our dedicated team of experts is committed to staying up-to-date with the latest fraud trends and continuously enhancing our systems to ensure your business remains secure.</p>
+
+							<a href="insurance-details.html">
+								<i class="flaticon-right"></i>
+							</a>
+
+							<span class="choose-icon flaticon-kindness"></span>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-choose wow fadeInUp" data-wow-delay=".3s">
+							<span class="flaticon-target"></span>
+							<h3>Awesome Support</h3>
+							<p>Our state-of-the-art technology and advanced analytics enable us to identify and flag suspicious activities, ensuring that only legitimate claims are processed and paid out.</p>
+
+							<a href="insurance-details.html">
+								<i class="flaticon-right"></i>
+							</a>
+
+							<span class="choose-icon flaticon-target"></span>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+						<div class="single-choose wow fadeInUp" data-wow-delay=".4s">
+							<span class="flaticon-support"></span>
+							<h3>Advanced Fraud Detection Technology for Reliable Claim Processing </h3>
+							<p>By leveraging machine learning algorithms and data analysis, we can detect patterns, anomalies, and red flags that indicate potential fraud. Our system can analyze vast amounts of data quickly and accurately, minimizing false positives and maximizing the detection of fraudulent behavior.</p>
+
+							<a href="insurance-details.html">
+								<i class="flaticon-right"></i>
+							</a>
+
+							<span class="choose-icon flaticon-support"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Choose Us Area -->
+
+		
+		<!-- Start Our Vision Area -->
+		<section class="our-vision-area ptb-100">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="about-img wow fadeInLeft" data-wow-delay=".2s">
+							<img src="{% static 'assets/img/vision-img.png' %}" alt="Image">
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="vision-content">
+							<span>Our Vision</span>
+							<h2>We are Committed to Help Clients to Reach The Goals</h2>
+
+							<p>Our mission is to build an advanced and comprehensive insurance fraud detection system that uses cutting-edge technology and data analytics to actively detect, prevent, and combat fraudulent activity in the insurance business.</p>	
+
+							<p class="mb-30">Our technology intends to revolutionize the detection and mitigation of insurance fraud by leveraging the capabilities of artificial intelligence, machine learning, and predictive modeling. We envision a future in which insurance firms can securely defend their businesses and honest policyholders against the negative repercussions of fraud.</p>
+
+							<div class="vision-list">
+								<ul>
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										Early Detection
+									</li>
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										Save Money
+									</li>
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										Comprehensive Analysis
+									</li>
+								</ul>
+	
+								<ul class="ml-30">
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										No Brokers, No Upselling
+									</li>
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										Continuos Improvement
+									</li>
+									<li>
+										<i class="bx bx-chevrons-right"></i>
+										Professional Advisor
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Our Vision Area -->
+
+		<!-- Start Services Area -->
+		<section class="services-area ptb-100">
+			<div class="container">
+				<div class="section-title">
+					<h2>Our Services</h2>
+					<p>Insura's fraud detection system offers a variety of services to assist in identifying and preventing fraudulent actions in the insurance sector.</p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-services wow fadeInLeft" data-wow-delay=".3s">
+							<i class="flaticon-car-insurance"></i>
+							<h3>Data Analysis</h3>
+							
+							<p>Large amounts of data, such as policyholder information, claim records, financial transactions, and historical patterns, are analyzed by insurance fraud detection systems. They use advanced analytics approaches to spot abnormalities and odd patterns that could point to fraud.</p>
+
+							
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-services  wow fadeInLeft" data-wow-delay=".2s">
+							<i class="flaticon-health-care"></i>
+							<h3>Fraud Scoring</h3>
+							
+							<p>Based on their likelihood of involvement in fraudulent activities, these systems assign fraud scores or risk ratings to policyholders, claims, or other entities. The scoring algorithms take into account a variety of characteristics, such as previous claim history, data discrepancies, and strange conduct.</p>
+
+							
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-sm-6">
+						<div class="single-services  wow fadeInLeft" data-wow-delay=".1s">
+							<i class="flaticon-life-insurance"></i>
+							<h3>Claim Validation</h3>
+								
+							<p>Insurance fraud detection systems verify the legitimacy and correctness of policyholders' insurance claims. They compare claim data to historical data and other relevant databases to discover discrepancies or red flags.</p>
+
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="services-shape">
+				<img src="{% static 'assets/img/services-shape-1.png' %}" alt="Image">
+			</div>
+		</section>
+		<!-- End Services Area -->
+
+		<!-- Start Counter Area -->
+		<section class="counter-area pt-100 pb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-counter">
+							<h2>
+								<span class="odometer" data-count="950">00</span> 
+								<span class="target">+</span>
+							</h2>
+							<p>Completed Project</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-counter">
+							<h2>
+								<span class="odometer" data-count="850">00</span> 
+								<span class="target">+</span>
+							</h2>
+							<p>Winning Awards</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-counter">
+							<h2>
+								<span class="odometer" data-count="550">00</span> 
+								<span class="traget">+</span>
+							</h2>
+							<p>Clients</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-counter">
+							<h2>
+								<span class="odometer" data-count="440">00</span> 
+								<span class="target">+</span>
+							</h2>
+							<p>Countries</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Counter Area -->
+
+		
+		<!-- Start Testimonial Area -->
+		<section class="testimonial-area ptb-100">
+			<div class="container">
+				<div class="section-title">
+					<span>Testimonials</span>
+					<h2>What Our Clients Say</h2>
+					<p>Here are the experience our clients had with insura.</p>
+				</div>
+
+				<div class="testimonial-wrap owl-theme owl-carousel">
+					<div class="single-client">
+						<img src="{% static 'assets/img/testimonial/1.jpg' %}" alt="Image">
+
+						<h3>Denial Peer</h3>
+
+						<p>The insurance fraud detection software offered by <b>Insura</b> is a game-changer. It has helped us detect and prevent fraudulent activities, ensuring the integrity of our insurance operations. Comprehensive reporting have empowered us to take immediate action, resulting in substantial cost savings.</p>
+
+						<ul>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+						</ul>
+
+						<div class="quotes">
+							<i class="flaticon-left-quotes-sign"></i>
+						</div>
+					</div>
+
+					<div class="single-client">
+						<img src="{% static 'assets/img/testimonial/2.jpg' %}" alt="Image">
+
+						<h3>Anna Dew</h3>
+						<p>I am extremely impressed with the insurance fraud detection system provided by <b>Insura</b>. It has saved us significant amounts of money by identifying and preventing fraudulent claims. The accuracy and efficiency of the system are truly remarkable.</p>
+
+						<ul>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+						</ul>
+						
+						<div class="quotes">
+							<i class="flaticon-left-quotes-sign"></i>
+						</div>
+					</div>
+
+					<div class="single-client">
+						<img src="{% static 'assets/img/testimonial/3.jpg' %}" alt="Image">
+
+						<h3>Jecty Smith</h3>
+
+						<p>Using the insurance fraud detection system from <b>Insura</b> company has been a transformative experience for our organization. It has significantly reduced our exposure to fraudulent claims, enhancing our overall profitability. 
+						</p>
+
+						<ul>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+							<li>
+								<i class="bx bxs-star"></i>
+							</li>
+						</ul>
+						
+						<div class="quotes">
+							<i class="flaticon-left-quotes-sign"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href= "{% url 'testimonials'%}"  class = "testimonials btn btn-info text-light" >Click Here for more customer review of Our Software.</a>
+		</section>
+		<!-- End Testimonial Area -->
+
+		<!-- Start Footer Top Area -->
+		<footer class="footer-top-area pt-100 pb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget">
+							<h1 id>
+								Insura
+							</h1>
+
+							<p>Insura provides seamless experirence of insurance claims. Solving your Insurance Problems.Protection is just Click Away.
+								Securing you and your Family for a Better Future.</p>
+
+							<div class="social-area">
+								<ul>
+									<li>
+										<a href="#"><i class="bx bxl-facebook"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-twitter"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-linkedin"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-youtube"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="bx bxl-instagram"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget contact">
+							<h3>Contact Us</h3>
+
+							<ul>
+								<li>
+									<i class="flaticon-call"></i>
+									<span>Hotline:</span> 
+									<a href="tel:+822456974">
+										+822456974
+									</a>
+								</li>
+								
+								<li>
+									<i class="flaticon-email"></i>
+									<span>Email:</span> 
+									Insura@service.com
+									</a>
+								</li>
+								
+								<li>
+									<i class="flaticon-maps-and-flags"></i>
+									<span>Address:</span> 
+									123, Western Road, Melbourne Australia
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget">
+							<h3>Service Links</h3>
+
+							<ul>
+								<li>
+									<a href="#">
+										Insurance
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Car Insurance
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Home Insurance
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Investment
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Health Insurance
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Business 
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="single-widget">
+							<h3>Newsletter</h3>
+
+							<p class="newsletter-p">Subscribe to our newsletter to receive latest updates.</p>
+
+							<div class="subscribe-wrap">
+								<form class="newsletter-form" data-toggle="validator">
+									<input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off">
+	
+									<button class="default-btn" type="submit">
+										Subscribe
+									</button>
+	
+									<div id="validator-newsletter" class="form-result"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End Footer Top Area -->
+
+		<!-- Start Footer Bottom Area -->
+		<footer class="footer-bottom-area footer-bottom-electronics-area">
+			<div class="container">
+				<div class="copy-right">
+					
+				</div>
+			</div>
+		</footer>
+		<!-- End Footer Bottom Area -->
+		
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- End Go Top Area --> 
+		
+
+        <!-- Jquery Min JS -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- Bootstrap Bundle  MinJS -->
+        <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Meanmenu Min JS -->
+		<script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+        <!-- Wow Min JS -->
+        <script src="{% static 'assets/js/wow.min.js' %}"></script>
+        <!-- Owl Carousel Min JS -->
+		<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Owl Magnific Min JS -->
+		<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+        <!-- Nice Select Min JS -->
+		<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+		<!-- Jarallax Min JS --> 
+		<script src="{% static 'assets/js/jarallax.min.js' %}"></script>
+		<!-- Mixitup Min JS -->
+		<script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+		<!-- Appear Min JS --> 
+        <script src="{% static 'assets/js/appear.min.js' %}"></script>
+		<!-- Odometer Min JS --> 
+		<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+		<!-- Form Ajaxchimp Min JS -->
+		<script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator Min JS -->
+		<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+		<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+        <!-- Custom JS -->
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+    </body>
+
+
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zxx">
+    
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{%load static%}
+	<!-- Bootstrap Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	
+	<!-- Owl Theme Default Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+	<!-- Owl Carousel Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<!-- Owl Magnific Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+	<!-- Animate Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+	<!-- Boxicons Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+	<!-- Flaticon CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+	<!-- Meanmenu Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- Nice Select Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+	<!-- Odometer Min CSS-->
+	<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+	<!-- Favicon -->
+	
+	<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	
+	<!-- Title -->
+	<title>Insura</title>
+</head>
+
+    <body>
+
+		{% include 'nav1.html' %}
+	
+
+		<!-- Start Sidebar Modal -->
+		{% include 'frontend/Sidebar-Modal.html'%}
+		<!-- End Sidebar Modal -->
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area bg-3">
+			<div class="container">
+				<div class="page-title-content">
+					<h2>Log In</h2>
+					<ul>
+						<li>
+							<a href="{% url 'home'%}">
+								Home 
+							</a>
+						</li>
+
+						<li>Pages</li>
+
+						<li>User</li>
+
+						<li>Log In</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Page Title Area -->
+
+		<!-- Start Log In Area -->
+		<section class="user-area-all-style log-in-area ptb-100">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-12">
+						<div class="contact-form-action">
+							<div class="form-heading text-center">
+								<h3 class="form-title">Log In to your account! {{email_check}}</h3>
+								<div>
+									{% for message in messages %}
+										<div class="alert {{ message.tags }}" role="alert">
+											{{ message }}
+										</div>
+									{% endfor %}
+
+									
+										<div class="text-primary">
+											{{ email_message }}
+										</div>
+									
+
+									{% if error %}
+										<p>{{ error }}</p>
+									{% endif %}
+								</div>
+								<p class="form-desc">With your social network.</p>
+							</div>
+							<form method="post" action="{% url 'login_user' %}">
+								{% csrf_token %} 
+								
+								<div class="row">
+									<div class="col-12">
+										<div class="form-group">
+											<label for="email_login"></label>
+											<input id="email_login" class="form-control"  name="email_login" placeholder="Username or Email">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-group">
+											<label for="password_login"></label>
+											<input id="password_login" class="form-control" type="password" name="password_login" placeholder="Password">
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-6 form-condition">
+										<div class="agree-label">
+											<input type="checkbox" id="chb1">
+											<label for="chb1">
+												Remember Me
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-6">
+										<a class="forget" href="{% url 'forget_password' %}">Forgot my password?</a>
+									</div>
+									<div class="col-12">
+										<button class="default-btn btn-two" type="submit" >
+											Log In Now
+										</button>
+									</div>
+									<div class="col-12">
+										<p class="account-desc">
+											Not a member?
+											<a href="{% url 'registration'%}">Register</a>
+										</p>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Log In Area -->
+
+		{% include 'footer.html'%}
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- End Go Top Area --> 
+		
+
+         <!-- Jquery Min JS -->
+		 <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		 <!-- Bootstrap Bundle  MinJS -->
+		 <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+		 <!-- Meanmenu Min JS -->
+		 <script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+		 <!-- Wow Min JS -->
+		 <script src="{% static 'assets/js/wow.min.js' %}"></script>
+		 <!-- Owl Carousel Min JS -->
+		 <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+		 <!-- Owl Magnific Min JS -->
+		 <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+		 <!-- Nice Select Min JS -->
+		 <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+		 <!-- Jarallax Min JS --> 
+		 <script src="{% static 'assets/js/jarallax.min.js' %}"></script>
+		 <!-- Mixitup Min JS -->
+		 <script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+		 <!-- Appear Min JS --> 
+		 <script src="{% static 'assets/js/appear.min.js' %}"></script>
+		 <!-- Odometer Min JS --> 
+		 <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+		 <!-- Form Ajaxchimp Min JS -->
+		 <script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+		 <!-- Form Validator Min JS -->
+		 <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+		 <!-- Contact JS -->
+		 <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+		 <!-- Custom JS -->
+		 <script src="{% static 'assets/js/custom.js' %}"></script>
+    </body>
+
+
+</html>

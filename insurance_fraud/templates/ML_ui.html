@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        h2{
+            padding: 50px;
+            text-align: center;
+        }
+        #start{
+            padding: 36px;
+        }
+        #response{
+            position: relative;
+            left: 33px;
+        }
+        #file-upload{
+            position: relative;
+            left: 33px;
+        }
+
+        .uploader{
+            border: 11px #0ce6f1 groove;
+          
+            background: linear-gradient(45deg, #cc2b5e, #753a88);
+            color: white;
+            padding: 75px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,350px);
+            grid-template-rows: 494px 494px;
+            grid-gap:90px;
+        }
+
+        button{
+            position: relative;
+            left: 50px;
+            top: 20px;
+            padding: 5px 24px;
+            color: red;
+        }
+        span{
+            position: relative;
+            top: 50px;
+        }
+
+        body{
+            background:linear-gradient(45deg, #FF61D2, #FE9090);
+        }
+
+        h2{
+            color:white;
+        }
+
+        a{
+            font-size: 30px;
+            position: absolute;
+            top: 103px;
+            left: 537px;
+            color: white;
+        }
+    </style>
+    
+    <title>Ml model</title>
+</head>
+<body>
+    
+    <h2>ML model training and evaluation</h2>
+    <a href="{% url 'reset_accuracy' %}">Reset Model Accuracy</a>
+    
+
+<!-- Upload  -->
+<!--Knn model evaluation-->
+
+<div class="container">
+    <form id="file-upload-form" method="post" class="uploader" action="{% url 'knn_model' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+   
+
+    <label for="file-upload" id="file-drag">
+
+        <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        
+        <div id="notimage" class="hidden">Upload csv file for knn model accuracy.</div>
+        
+        </div>
+        <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+        </progress>
+        </div>
+    </label>
+
+    <label for="file-upload1"><input id="file-upload1" type="file" name="knn_train" accept=".csv" required>Train Dataset</label>
+    <label><input id="file-upload2" type="file" name="knn_val"  accept=".csv" required>Validation Dataset</label>
+    <label><input id="file-upload3" type="file" name="knn_test"  accept=".csv" required>Test Dataset</label>
+    <button >Upload</button>
+    {% if knn_accuracy %}
+        <p class="accuracy_header">Accuracy of Random forest:{{rfclf_accuracy}}</p>
+    {% else %}
+
+    {% endif%}
+    </form>
+    <!--logistic model evaluation-->
+    <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data" action="{% url 'logistic_accuracy' %}">
+        {% csrf_token %}
+    
+
+    <label for="file-upload" id="file-drag">
+
+        <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        
+        <div id="notimage" class="hidden">Upload csv file for Logistic regression model accuracy.</div>
+        
+        </div>
+        <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+        </progress>
+        </div>
+    </label>
+    <input id="file-upload" type="file" name="logistic_train" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="logistic_val" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="logistic_test" enctype="multipart/form-data" accept=".csv" required>
+    <button >Upload</button>
+   
+    {% if logistic_accuracy %}
+        <span>accuracy:{{logistic_accuracy}}</span>
+    {% else %}
+
+    {% endif%}
+    
+    </form>
+    <!--XGboost model evaluation-->
+    <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data", action="{% url 'xgb_accuracy' %}">
+        {% csrf_token %}
+    
+
+    <label for="file-upload" id="file-drag">
+
+        <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        
+        <div id="notimage" class="hidden">Upload csv file for XGboost model accuracy.</div>
+        
+        </div>
+        <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+        </progress>
+        </div>
+    </label>
+    <input id="file-upload" type="file" name="xgb_train" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="xgb_val" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="xgb_test" enctype="multipart/form-data" accept=".csv" required>
+    <button >Upload</button>
+
+    {% if xgb_accuracy%}
+    <span>accuracy:{{xgb_accuracy}}</span>
+    {% else %}
+
+    {% endif%}
+    </form>
+    <!--Random forest model evaluation-->
+    <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data", action="{% url 'rdmf_accuracy' %}">
+        {% csrf_token %}
+    
+
+    <label for="file-upload" id="file-drag">
+
+        <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        
+        <div id="notimage" class="hidden">Upload csv file for random forest model accuracy.</div>
+        
+        </div>
+        <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+        </progress>
+        </div>
+    </label>
+    <input id="file-upload" type="file" name="rdmf_train" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="rdmf_val" enctype="multipart/form-data" accept=".csv" required>
+    <input id="file-upload" type="file" name="rdmf_test" enctype="multipart/form-data" accept=".csv" required>
+    <button >Upload</button>
+  
+    {% if rfclf_accuracy %}
+        <span>accuracy:{{rfclf_accuracy}}</span>
+    {% else %}
+
+    {% endif%}
+    </form>
+</div>
+</body>
+</html>

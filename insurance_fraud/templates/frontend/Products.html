@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="zxx">
+    
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{%load static%}
+	<!-- Bootstrap Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	
+	<!-- Owl Theme Default Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+	<!-- Owl Carousel Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<!-- Owl Magnific Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+	<!-- Animate Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+	<!-- Boxicons Min CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+	<!-- Flaticon CSS --> 
+	<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+	<!-- Meanmenu Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- Nice Select Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+	<!-- Odometer Min CSS-->
+	<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+	
+	<!-- Favicon -->
+	
+	<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	
+	<!-- Title -->
+	<title>Insura</title>
+</head>
+
+    <body>
+
+		<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{%load static%}
+		<!-- Bootstrap Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+		
+		<!-- Owl Theme Default Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+		<!-- Owl Carousel Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<!-- Owl Magnific Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+		<!-- Animate Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+		<!-- Boxicons Min CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css' %}"> 
+		<!-- Flaticon CSS --> 
+		<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+		<!-- Meanmenu Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+		<!-- Nice Select Min CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+		<!-- Odometer Min CSS-->
+		<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+		<!-- Favicon -->
+		
+		
+		<!-- Title -->
+		<title></title>
+    </head>
+    <body>
+        <!-- Start Heder Area --> 
+		<header class="header-area fixed-top">
+			<div class="top-header-area">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="header-content-left">
+								<p id="home_header"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Navbar Area -->
+			<div class="nav-area">
+				<div class="navbar-area">
+					<!-- Menu For Mobile Device -->
+					<div class="mobile-nav">
+						<a href="index.html" class="logo">
+							<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+						</a>
+					</div>
+
+					<!-- Menu For Desktop Device -->
+					<div class="main-nav">
+						<nav class="navbar navbar-expand-md navbar-light">
+							<div class="container">
+								<h1>
+									Insura
+								</h1>
+								
+								<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+									<ul class="navbar-nav m-auto">
+										<li class="nav-item">
+											<a href="{% url 'home'%}" class="nav-link dropdown-toggle active">
+												Home
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												Pages
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'testimonials'%}" class="nav-link">Testimonials</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'team'%}" class="nav-link">Team</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'conditions' %}" class="nav-link">Terms & Conditions</a>
+												</li>
+
+												<li class="nav-item">
+													<a href="{% url 'policy' %}" class="nav-link">Privacy Policy</a>
+												</li>
+												
+
+												<li class="nav-item">
+													<a href="404.html" class="nav-link">404 Error Page</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="#" class="nav-link dropdown-toggle">
+												User
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'login'%}" class="nav-link">Log In</a>
+												</li>
+												<li class="nav-item">
+													<a href="{% url 'sign_in'%}" class="nav-link">Sign In</a>
+												</li>
+												<li class="nav-item">
+													<a href="recover-password.html" class="nav-link">Recover Password</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'contact' %}" class="nav-link">Contact</a>
+										</li>
+										<li class="nav-item">
+											{% if user_credentials %}
+											<a href="{% url 'profile' %}" class="nav-link">My account</a>
+											{% else %}
+											<a href="#" class="nav-link" onclick="javascript:alert('please login to an account')">My account</a>
+											<script>
+												//prompt('Please create account')
+											</script>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'Products' %}" class="nav-link">Our products</a>
+											
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'blog'%}" class="nav-link dropdown-toggle active">
+												Blog
+												<i class="bx bx-plus"></i>
+											</a>
+
+											<ul class="dropdown-menu">
+												<li class="nav-item">
+													<a href="{% url 'blog'%}" class="nav-link active">Blog</a>
+												</li>
+												
+											</ul>
+										</li>
+									</ul>
+									
+									<!-- Start Other Option -->
+									<div class="others-option">
+										<div class="option-item">
+											<i class="search-btn bx bx-search"></i>
+											<i class="close-btn bx bx-x"></i>
+											
+											<div class="search-overlay search-popup">
+												<div class='search-box'>
+													<form class="search-form">
+														<input class="search-input" name="search" placeholder="Search" type="text">
+		
+														<button class="search-button" type="submit"><i class="bx bx-search"></i></button>
+													</form>
+												</div>
+											</div>
+										</div>
+
+										<div class="subscribe">
+											<a href="{% url 'check_fraud' %}" class="default-btn">
+												Check for Insurance fraud
+											</a>
+										</div>
+
+										<div class="sidebar-menu">
+											<a href="#" data-bs-toggle="modal" data-bs-target="#myModal2">
+												<i class="bx bx-grid-alt"></i>
+											</a>
+										</div>
+									</div>
+									<!-- End Other Option -->
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar Area -->
+		</header>
+		<!-- End Heder Area -->
+    
+    </body>
+</html>
+	
+
+		<!-- Start Sidebar Modal -->
+		{% include 'frontend/Sidebar-Modal.html'%}
+		<!-- End Sidebar Modal -->
+
+		
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  height: 100%;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 90px;
+  left: 1102px;
+  transform: translate(-50%, -50%);
+}
+	</style>
+	<div class="container" style="position:relative; top:203px;">
+		
+        <header>
+			{% if user_credentials %}
+		<span>Hello, {{user.client_name}}</span>
+		{%else%}
+		  <span>Hello, Sign In</span>
+		  <h5 class="tp-header-login-title">Your Account</h5>
+		{% endif %}
+		<div class="animation-container">
+        	<div class="click-here"><-Click here to view cart list</div>
+   		</div>
+            <h1>Your Shopping Cart</h1>
+			<div class="wrap">
+				<div class="search">
+				   <input id="search-input" type="text" class="searchTerm" placeholder="What are you looking for?">
+				   <button id="search-button" type="submit" class="searchButton">
+					 <i class="fa fa-search"></i>
+				  </button>
+				</div>
+			 </div>
+
+			
+                                <div class="shopping">
+                                <img  src="{% static 'cart1.jpg'%}">
+                                <div  class="quantity">0</div>
+								
+                           
+            
+        </header>
+        <p style="font-size:25px;">A total of {{total_prod}} products are currently available for you with quantity.</p>
+      <div class="list">
+        
+        
+      </div>
+      {{products|json_script:"product-list"}}
+      {{cartItem|json_script:"cartItem"}}
+    </div>
+    
+   
+    <div class="card">
+        
+        <h1>Cart</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">$0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+        <div class="proceed_checkOut">
+			
+				 {% if user_credentials or user_id%}
+<form id="listCardsForm" method="POST" action="{% url 'checkout' %}">
+
+                
+            
+            
+                {% csrf_token %}
+                <!-- Add hidden input fields to store the listCards data -->
+                <input style="display: none;" type="text" name="listCardsData" id="listCardsData" >
+                <!-- Cart total -->
+                <input style="display: none;" type="text" name="total" id="total">
+                <!-- Add other form fields if needed -->
+            
+                    <button id="cartbtn" style="position: relative; left: 324px; display: none;" class="closeShopping btn btn-primary" type="submit">Proceed to checkout</button>
+                
+                
+</form>
+
+
+{% else%}
+<form id="listCardsForm" method="" action="">
+
+                
+            
+            
+     
+                <!-- Add hidden input fields to store the listCards data -->
+                <input style="display: none;" type="text" name="listCardsData" id="listCardsData" >
+                <!-- Cart total -->
+                <input style="display: none;" type="text" name="total" id="total">
+                <!-- Add other form fields if needed -->
+            
+                <button onclick = "alert('login please')" id="cartbtn" style="position: relative; left: 324px; display: none;" class="closeShopping btn btn-primary" type="submit">Proceed to checkout</button>
+                
+                
+</form>
+
+{% endif %}
+            
+            <!--<a href=""  class="closeShopping btn btn-primary">Proceed to checkout</a>-->
+        </div>
+    </div>
+    
+            </div>
+			
+		<script src="{% static 'New folder/app.js' %}">
+           
+           
+        </script>
+		<div class = "spacing">
+		</div>
+		{% include 'footer.html'%}
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class='bx bx-chevrons-up'></i>
+			<i class='bx bx-chevrons-up'></i>
+		</div>
+		<!-- End Go Top Area --> 
+		
+
+         <!-- Jquery Min JS -->
+		 <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		 <!-- Bootstrap Bundle  MinJS -->
+		 <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+		 <!-- Meanmenu Min JS -->
+		 <script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+		 <!-- Wow Min JS -->
+		 <script src="{% static 'assets/js/wow.min.js' %}"></script>
+		 <!-- Owl Carousel Min JS -->
+		 <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+		 <!-- Owl Magnific Min JS -->
+		 <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+		 <!-- Nice Select Min JS -->
+		 <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+		 <!-- Jarallax Min JS --> 
+		 <script src="{% static 'assets/js/jarallax.min.js' %}"></script>
+		 <!-- Mixitup Min JS -->
+		 <script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+		 <!-- Appear Min JS --> 
+		 <script src="{% static 'assets/js/appear.min.js' %}"></script>
+		 <!-- Odometer Min JS --> 
+		 <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+		 <!-- Form Ajaxchimp Min JS -->
+		 <script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+		 <!-- Form Validator Min JS -->
+		 <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+		 <!-- Contact JS -->
+		 <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+		 <!-- Custom JS -->
+		 <script src="{% static 'assets/js/custom.js' %}"></script>
+		 <script src="https://kit.fontawesome.com/887bb19da4.js" crossorigin="anonymous"></script>
+    </body>
+
+
+</html>
